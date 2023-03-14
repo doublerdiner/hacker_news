@@ -9,7 +9,6 @@ function App() {
   // useState 2 to store articles from Hacker News. 
   const [articles, setArticles] = useState([]);
   // Save search term from input form. 
-  const [search, setSearch] = useState("");
   const [masterArticles, setMasterArticles] = useState([]);
 
   async function fetchPageRefs (){
@@ -38,7 +37,6 @@ function App() {
   }, [pageRefs]);
 
   const submitSearch = (word)=>{
-    setSearch(word);
     setArticles(masterArticles);
     const newArticles = masterArticles.filter((article)=>{
       return article.title.includes(word)
